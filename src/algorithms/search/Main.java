@@ -1,9 +1,11 @@
-package algorithms.binary_search;
+package algorithms.search;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.Set;
 
 import algorithms.sorted_array.Sort;
 
@@ -21,7 +23,9 @@ public class Main {
 			array.add(rand.nextInt(500));
 		}
 		
-		List<Integer> sortedArray = Sort.selectionSort(array);
+		array = removeDuplicates(array);
+		
+		List<Integer> sortedArray = Sort.selectionSort(array);		
 		
 		System.out.print("[ ");
 		sortedArray.forEach(x -> System.out.print(x + ", "));
@@ -31,7 +35,12 @@ public class Main {
 		int item = sc.nextInt();
 		
 		System.out.println("Item: " + item);
-		System.out.println("Position: " + BinarySearch.search(sortedArray, item));
+		System.out.println("Position: " + Search.binarySearch(sortedArray, item));
+	}
+	
+	private static List<Integer> removeDuplicates(List<Integer> list){
+		Set<Integer> hashList = new HashSet<Integer>(list);
+		return new ArrayList<Integer>(hashList);
 	}
 
 }

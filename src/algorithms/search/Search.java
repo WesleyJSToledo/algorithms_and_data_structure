@@ -1,9 +1,9 @@
-package algorithms.binary_search;
+package algorithms.search;
 
 import java.util.List;
 
-public class BinarySearch{
-	public static int search(List<Integer> array, Integer item){
+public class Search{
+	public static int binarySearch(List<Integer> array, Integer item){
 		
 		int low = 0;
 		int high = array.size() - 1;
