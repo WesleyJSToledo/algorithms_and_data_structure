@@ -1,60 +1,45 @@
-.metadata
-bin/
-tmp/
-*.tmp
-*.bak
-*.swp
-*~.nib
-local.properties
-.settings/
-.loadpath
-.recommenders
+# Prerequisites
+*.d
 
-# External tool builders
-.externalToolBuilders/
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
 
-# Locally stored "Eclipse launch configurations"
-*.launch
+# Precompiled Headers
+*.gch
+*.pch
 
-# PyDev specific (Python IDE for Eclipse)
-*.pydevproject
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
 
-# CDT-specific (C/C++ Development Tooling)
-.cproject
+# Fortran module files
+*.mod
+*.smod
 
-# CDT- autotools
-.autotools
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
 
-# Java annotation processor (APT)
-.factorypath
+# Executables
+*.exe
+*.out
+*.app
 
-# PDT-specific (PHP Development Tools)
-.buildpath
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
 
-# sbteclipse plugin
-.target
+# Local History for Visual Studio Code
+.history/
 
-# Tern plugin
-.tern-project
-
-# TeXlipse plugin
-.texlipse
-
-# STS (Spring Tool Suite)
-.springBeans
-
-# Code Recommenders
-.recommenders/
-
-# Annotation Processing
-.apt_generated/
-.apt_generated_test/
-
-# Scala IDE specific (Scala & Java development for Eclipse)
-.cache-main
-.scala_dependencies
-.worksheet
-
-# Uncomment this line if you wish to ignore the project description file.
-# Typically, this file would be tracked if it contains build/dependency configurations:
-#.project
+# Built Visual Studio Code Extensions
+*.vsix
