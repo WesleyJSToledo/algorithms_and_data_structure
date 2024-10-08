@@ -1,5 +1,7 @@
 #include <iostream>
 #include <vector>
+#include <random>
+#include <algorithm>
 #include <string>
 #include <chrono>
 #include <iomanip>
@@ -11,7 +13,7 @@
 #include "sort_methods/quick_sort.cpp"
 
 #define ARRAY_SIZE 9999
-#define RANGE_RANDOM_VALUES 99999
+#define RANGE_RANDOM_VALUES 999999
 
 
 void print_list(std::vector<int> array)
@@ -42,20 +44,14 @@ bool is_duplicate(std::vector<int>array, int value)
 
 std::vector<int> random_array()
 {
-    std::vector<int> array;
+    std::vector<int>numbers(RANGE_RANDOM_VALUES);
+    std::iota(numbers.begin(), numbers.end(), 0);
 
-    srand(time(0));
-    int i = 0;
-    while (i < ARRAY_SIZE)
-    {
-        int value = rand() % RANGE_RANDOM_VALUES;
-        if(!is_duplicate(array, value))
-        {
-            array.push_back(value);
-            i++;
-        }
-    }
-    return array;
+    unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+    std::shuffle(numbers.begin(), numbers.end(), std::default_random_engine(seed));
+
+    std::vector<int> random_array(numbers.begin(), numbers.begin() + ARRAY_SIZE);
+    return random_array;
 }
 
 void search_methods()
